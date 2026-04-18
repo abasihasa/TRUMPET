@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>TRUMPET | Restobar · Tirana — Full Menu</title>
+  <!-- Google Fonts: elegant serif + modern sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0A1F0E;  /* deep green base */
+      font-family: 'Inter', sans-serif;
+      color: #F5F2E8;
+      line-height: 1.4;
+      scroll-behavior: smooth;
+    }
+
+    /* custom gold & green palette */
+    :root {
+      --green-deep: #0A2F14;
+      --green-rich: #1A4A2A;
+      --green-accent: #2C6E3C;
+      --gold-light: #E9D6A3;
+      --gold-mid: #CFB87C;
+      --gold-dark: #B4934B;
+      --cream: #FCF9EF;
+      --shadow-gold: rgba(207, 184, 124, 0.2);
+    }
+
+    h1, h2, h3, .logo, .nav-links a, .hero-title, .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header & navigation */
+    header {
+      background: rgba(10, 31, 14, 0.92);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--gold-mid);
+      padding: 0.8rem 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold-light);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .logo span {
+      color: var(--gold-mid);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--cream);
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold-mid);
+      border-bottom-color: var(--gold-mid);
+    }
+
+    /* hero section */
+    .hero {
+      background: linear-gradient(117deg, #0A2F14 0%, #1C4124 100%);
+      padding: 4rem 0 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "🎺";
+      font-size: 18rem;
+      opacity: 0.05;
+      position: absolute;
+      bottom: -4rem;
+      right: -3rem;
+      font-family: monospace;
+      pointer-events: none;
+    }
+    .hero .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .hero-content {
+      flex: 1.2;
+    }
+    .hero-badge {
+      background: var(--gold-dark);
+      color: #0A1F0E;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .hero-title {
+      font-size: 4.2rem;
+      line-height: 1.1;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 1rem;
+    }
+    .hero-title .gold-accent {
+      color: var(--gold-mid);
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      max-width: 550px;
+      margin: 1.2rem 0 1.8rem;
+      opacity: 0.9;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--gold-mid);
+      border: none;
+      padding: 0.9rem 2rem;
+      font-weight: 600;
+      border-radius: 40px;
+      font-size: 1rem;
+      color: #0A1F0E;
+      cursor: pointer;
+      transition: 0.25s;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: #E2C98C;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--gold-mid);
+      padding: 0.9rem 2rem;
+      font-weight: 600;
+      border-radius: 40px;
+      font-size: 1rem;
+      color: var(--gold-light);
+      cursor: pointer;
+      transition: 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline:hover {
+      background: rgba(207, 184, 124, 0.2);
+      border-color: var(--gold-light);
+      transform: translateY(-3px);
+    }
+    .hero-image {
+      flex: 0.9;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 28px;
+      box-shadow: 0 25px 40px -15px rgba(0,0,0,0.5);
+      border: 1px solid rgba(207,184,124,0.3);
+    }
+
+    /* general sections */
+    section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--gold-light);
+    }
+    .section-sub {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3rem auto;
+      color: #D4D0BF;
+      font-size: 1rem;
+    }
+    .gold-divider {
+      width: 80px;
+      height: 3px;
+      background: var(--gold-mid);
+      margin: 0.5rem auto 2rem auto;
+      border-radius: 3px;
+    }
+
+    /* about / story */
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-text {
+      flex: 1;
+    }
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+      color: #E6E2D4;
+    }
+    .signature {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--gold-mid);
+      margin-top: 1rem;
+      font-style: italic;
+    }
+    .about-img {
+      flex: 1;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 15px 25px -12px black;
+    }
+    .about-img img {
+      width: 100%;
+      display: block;
+      transition: 0.4s;
+    }
+    .about-img:hover img {
+      transform: scale(1.02);
+    }
+
+    /* ========== FULL MENU STYLES (OPTION ONE) ========== */
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--gold-mid);
+      color: var(--gold-light);
+      padding: 0.6rem 1.5rem;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.2s;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--gold-mid);
+      color: #0A1F0E;
+      border-color: var(--gold-mid);
+    }
+
+    .menu-full-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .menu-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem;
+      background: rgba(26, 74, 42, 0.4);
+      border-radius: 20px;
+      transition: 0.2s;
+      border-left: 3px solid var(--gold-mid);
+      backdrop-filter: blur(2px);
+    }
+
+    .menu-item:hover {
+      background: rgba(26, 74, 42, 0.7);
+      transform: translateX(5px);
+      border-left-width: 5px;
+    }
+
+    .menu-item-img {
+      font-size: 2.5rem;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .menu-item-info {
+      flex: 1;
+    }
+
+    .menu-item-info h4 {
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+      color: var(--gold-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    .price {
+      color: var(--gold-mid);
+      font-weight: 600;
+      font-family: 'Inter', monospace;
+    }
+
+    .menu-item-info p {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      line-height: 1.4;
+    }
+
+    /* specials grid */
+    .specials-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .special-item {
+      background: #0F2B16;
+      border-radius: 28px;
+      padding: 1.2rem;
+      width: 280px;
+      text-align: center;
+      border-left: 4px solid var(--gold-mid);
+    }
+    .special-item i {
+      font-size: 2rem;
+      color: var(--gold-mid);
+    }
+    .special-item h4 {
+      font-size: 1.5rem;
+      margin: 0.7rem 0 0.3rem;
+    }
+
+    /* location & hours */
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: #0A2410;
+      border-radius: 48px;
+      padding: 2.5rem;
+      border: 1px solid rgba(207,184,124,0.3);
+    }
+    .info-card {
+      flex: 1;
+      text-align: center;
+    }
+    .info-card i {
+      font-size: 2.4rem;
+      color: var(--gold-mid);
+      margin-bottom: 1rem;
+    }
+    .info-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .info-card p, .info-card address {
+      font-style: normal;
+      line-height: 1.5;
+      color: #ddd0b8;
+    }
+    .hours-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3rem 0;
+      border-bottom: 1px dashed rgba(207,184,124,0.3);
+    }
+
+    /* footer */
+    footer {
+      background: #051008;
+      padding: 2.5rem 0;
+      text-align: center;
+      border-top: 1px solid var(--gold-dark);
+    }
+    .footer-logo {
+      font-size: 1.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--gold-light);
+    }
+    .social-icons {
+      margin: 1rem 0;
+    }
+    .social-icons a {
+      color: var(--gold-mid);
+      font-size: 1.4rem;
+      margin: 0 0.7rem;
+      transition: 0.2s;
+      display: inline-block;
+    }
+    .social-icons a:hover {
+      color: #E9D6A3;
+      transform: scale(1.1);
+    }
+    .copyright {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 850px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      .container {
+        padding: 0 1.5rem;
+      }
+      .hero .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .section-title {
+        font-size: 2.2rem;
+      }
+      .menu-full-grid {
+        grid-template-columns: 1fr;
+      }
+      .menu-item-info h4 {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#" class="logo">TRUMPET<span> · restobar</span></a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#location">Visit</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- hero section / home -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-music"></i> Tirana's new beat</div>
+        <h1 class="hero-title">Feel the rhythm,<br> taste the <span class="gold-accent">golden hour</span></h1>
+        <p class="hero-desc">Cocktails, jazz & Mediterranean soul — where every night sounds like a trumpet solo. Welcome to the heart of Blloku.</p>
+        <div class="btn-group">
+          <a href="#menu" class="btn-primary"><i class="fas fa-utensils"></i> Discover menu</a>
+          <a href="#location" class="btn-outline"><i class="fas fa-map-marker-alt"></i> Reserve a table</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://placehold.co/600x500/1A4A2A/CFB87C?text=TRUMPET+%7C+Tirana&font=playfair" alt="Trumpet Restobar Atmosphere">
+      </div>
+    </div>
+  </section>
+
+  <!-- about story section -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">The note behind the name</h2>
+      <div class="gold-divider"></div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Born in the vibrant streets of Tirana, <strong>TRUMPET</strong> blends the warmth of Mediterranean flavors with the electric pulse of urban nightlife. Our space echoes with brass notes, clinking glasses, and laughter — a sanctuary for those who seek elegance without pretension.</p>
+          <p>Inspired by the golden age of jazz bars and the lush green hills of Albania, every corner is wrapped in deep emerald and accented with shimmering gold. Whether you're here for a slow Negroni or a fiery dinner party, TRUMPET hits the right chord.</p>
+          <div class="signature">— The Trumpet family</div>
+        </div>
+        <div class="about-img">
+          <img src="https://placehold.co/550x450/2C6E3C/CFB87C?text=JAZZ+%26+GOLD&font=playfair" alt="Trumpet interior vibes">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL MENU SECTION (OPTION ONE: CATEGORY TABS + DETAILED ITEMS) -->
+  <section id="menu">
+    <div class="container">
+      <h2 class="section-title">Our Menu</h2>
+      <div class="gold-divider"></div>
+      <p class="section-sub">Fresh ingredients, bold flavors, and a golden touch — explore our signature dishes & cocktails.</p>
+
+      <!-- Category filter tabs -->
+      <div class="menu-tabs">
+        <button class="tab-btn active" data-category="all">All</button>
+        <button class="tab-btn" data-category="starters">Starters</button>
+        <button class="tab-btn" data-category="mains">Mains</button>
+        <button class="tab-btn" data-category="drinks">Drinks</button>
+        <button class="tab-btn" data-category="desserts">Desserts</button>
+      </div>
+
+      <!-- Dynamic menu grid -->
+      <div class="menu-full-grid" id="menuGrid">
+        <!-- STARTERS -->
+        <div class="menu-item" data-category="starters">
+          <div class="menu-item-img">🍗</div>
+          <div class="menu-item-info">
+            <h4>Golden Wings <span class="price">750 ALL</span></h4>
+            <p>Crispy chicken, honey-gold glaze, sesame & lime, served with aioli.</p>
+          </div>
+        </div>
+        <div class="menu-item" data-category="starters">
+          <div class="menu-item-img">🥗</div>
+          <div class="menu-item-info">
+            <h4>Green Goddess Salad <span class="price">650 ALL</span></h4>
+            <p>Arugula, avocado, cucumber, toasted seeds, lemon-tahini dressing.</p>
+          </div>
+        </div>
+        <div class="menu-item" data-category="starters">
+          <div class="menu-item-img">🍞</div>
+          <div class="menu-item-info">
+            <h4>Truffle Bruschetta <span class="price">490 ALL</span></h4>
+            <p>Grilled sourdough, truffle cream, cherry tomatoes, fresh basil.</p>
+          </div>
+        </div>
+        
+        <!-- MAINS -->
+        <div class="menu-item" data-category="mains">
+          <div class="menu-item-img">🐟</div>
+          <div class="menu-item-info">
+            <h4>Trumpet Tuna <span class="price">1450 ALL</span></h4>
+            <p>Seared tuna steak, avocado mousse, gold flakes, ponzu glaze & wakame.</p>
+          </div>
+        </div>
+        <div class="menu-item" data-category="mains">
+          <div class="menu-item-img">🍝</div>
+          <div class="menu-item-info">
+            <h4>Truffle Pasta <span class="price">1250 ALL</span></h4>
+            <p>Fresh tagliatelle, black truffle paste, parmesan cream & wild mushrooms.</p>
+          </div>
+        </div>
+        <div class="menu-item" data-category="mains">
+          <div class="menu-item-img">🥩</div>
+          <div class="menu-item-info">
+            <h4>Green Pepper Steak <span class="price">1890 ALL</span></h4>
+            <p>Grilled beef fillet, green peppercorn sauce, crispy rosemary potatoes.</p>
+          </div>
+        </div>
+        <div class="menu-item" data-category="mains">
+          <div class="menu-item-img">🍚</div>
+          <div class="menu-item-info">
+            <h4>Mediterranean Bowl <span class="price">980 ALL</span></h4>
+            <p>Quinoa, grilled veggies, halloumi, tzatziki, za’atar spice.</p>
+          </div>
+        </div>
+        
+        <!-- DRINKS -->
+        <div class="menu-item" data-category="drinks">
+          <div class="menu-item-img">🍸</div>
+          <div class="menu-item-info">
+            <h4>Brass Negroni <span class="price">650 ALL</span></h4>
+            <p>Gin, Campari, vermouth, orange zest — bold & smoky.</p>
+          </div>
+        </div>
+        <div class="menu-item" data-category="drinks">
+          <div class="menu-item-img">🍹</div>
+          <div class="menu-item-info">
+            <h4>Trumpet Spritz <span class="price">550 ALL</span></h4>
+            <p>Aperol, prosecco, soda, fresh orange & rosemary sprig.</p>
+          </div>
+        </div>
+        <div class="menu-item" data-category="drinks">
+          <div class="menu-item-img">🍷</div>
+          <div class="menu-item-info">
+            <h4>House Red / White <span class="price">450 ALL</span></h4>
+            <p>Local Albanian selection by glass — Kallmet or Shesh i Bardhë.</p>
+          </div>
+        </div>
+        <div class="menu-item" data-category="drinks">
+          <div class="menu-item-img">🥃</div>
+          <div class="menu-item-info">
+            <h4>Golden Old Fashioned <span class="price">780 ALL</span></h4>
+            <p>Bourbon, honey-gold syrup, aromatic bitters, orange twist.</p>
+          </div>
+        </div>
+        <div class="menu-item" data-category="drinks">
+          <div class="menu-item-img">🍺</div>
+          <div class="menu-item-info">
+            <h4>Craft Beer (Korca) <span class="price">400 ALL</span></h4>
+            <p>Fresh pilsner or amber ale — 0.4L.</p>
+          </div>
+        </div>
+        
+        <!-- DESSERTS -->
+        <div class="menu-item" data-category="desserts">
+          <div class="menu-item-img">🍰</div>
+          <div class="menu-item-info">
+            <h4>Golden Cheesecake <span class="price">490 ALL</span></h4>
+            <p>Caramelized white chocolate, gold dust, berry coulis.</p>
+          </div>
+        </div>
+        <div class="menu-item" data-category="desserts">
+          <div class="menu-item-img">🍫</div>
+          <div class="menu-item-info">
+            <h4>Dark Fondant <span class="price">550 ALL</span></h4>
+            <p>Warm chocolate lava, vanilla gelato, crushed hazelnuts.</p>
+          </div>
+        </div>
+        <div class="menu-item" data-category="desserts">
+          <div class="menu-item-img">🍯</div>
+          <div class="menu-item-info">
+            <h4>Baklava Cheesecake <span class="price">520 ALL</span></h4>
+            <p>Layered filo, walnut, honey syrup, cream cheese mousse.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- specials / what's buzzing -->
+  <section style="background: #0A2010;">
+    <div class="container">
+      <h2 class="section-title">Golden Hour Specials</h2>
+      <div class="gold-divider"></div>
+      <div class="specials-grid">
+        <div class="special-item">
+          <i class="fas fa-champagne-glasses"></i>
+          <h4>Happy Trumpet</h4>
+          <p>Mon-Thu · 6pm–8pm · 2x1 on draft beers & wine</p>
+        </div>
+        <div class="special-item">
+          <i class="fas fa-music"></i>
+          <h4>Live Jazz Nights</h4>
+          <p>Every Friday & Saturday · 21:00 start</p>
+        </div>
+        <div class="special-item">
+          <i class="fas fa-pizza-slice"></i>
+          <h4>Midnight Bite</h4>
+          <p>After 11pm: signature pizza + shot 590 ALL</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- location + hours -->
+  <section id="location">
+    <div class="container">
+      <div class="info-row">
+        <div class="info-card">
+          <i class="fas fa-map-pin"></i>
+          <h3>Find us</h3>
+          <address>Rruga Ismail Qemali, Pallati i Kultures,<br> Tirana, Albania 1001<br> (Heart of Blloku district)</address>
+          <p style="margin-top: 0.5rem;"><i class="fas fa-phone-alt"></i> +355 69 77 88 123</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-clock"></i>
+          <h3>Opening hours</h3>
+          <ul class="hours-list">
+            <li><span>Monday - Thursday</span> <span>17:00 – 01:00</span></li>
+            <li><span>Friday - Saturday</span> <span>17:00 – 02:30</span></li>
+            <li><span>Sunday</span> <span>16:00 – 23:30</span></li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-glass-cheers"></i>
+          <h3>Reservations</h3>
+          <p>Walk-ins welcome,<br> but we recommend booking for weekends.</p>
+          <a href="#" style="color: var(--gold-mid); display: inline-block; margin-top: 12px; font-weight: 600;"><i class="fas fa-calendar-alt"></i> Book a table →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">TRUMPET</div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p class="copyright">© 2025 TRUMPET Restobar — All rights reserved. Green & gold soul of Tirana.</p>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === "#" || href === "") return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // update active link manually
+        document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+
+  // Active highlight on scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollPos = window.scrollY + 150;
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      const href = link.getAttribute('href').substring(1);
+      if (href === current) {
+        link.classList.add('active');
+      }
+    });
+    if (window.scrollY < 100) {
+      navLinks.forEach(link => link.classList.remove('active'));
+      document.querySelector('.nav-links a[href="#home"]').classList.add('active');
+    }
+  });
+  document.querySelector('.nav-links a[href="#home"]').classList.add('active');
+
+  // ========== MENU FILTER FUNCTIONALITY (OPTION ONE) ==========
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  if (tabBtns.length && menuItems.length) {
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button style
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const category = btn.getAttribute('data-category');
+        
+        // Filter items
+        menuItems.forEach(item => {
+          if (category === 'all' || item.getAttribute('data-category') === category) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+</script>
+</body>
+  </html>
